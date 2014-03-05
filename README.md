@@ -2,7 +2,7 @@ Greetings
 =========
 
 My first AngularJS App.  
-Send cutomized greeting card through Mandrill (
+Send cutomized greeting cards via Mandrill. (transactional email platform from MailChimp)
 
 
 Made with : 
