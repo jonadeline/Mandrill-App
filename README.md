@@ -1,5 +1,5 @@
-Greetings
-=========
+Greetings App
+==============
 
 My first AngularJS App.  
 Send cutomized greeting cards via Mandrill. (transactional email platform from MailChimp)
