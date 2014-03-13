@@ -1,16 +1,11 @@
 'use strict';
 
-angular.module('greetingsApp', [
-  'ngCookies',
-  'ngResource',
-  'ngSanitize',
-  'ngRoute'
-])
+angular.module('greetingsApp', ['ngRoute', 'LocalStorageModule'])
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl'
+        templateUrl: 'views/send-ecard.html',
+        controller: 'sendCtrl'
       })
       .otherwise({
         redirectTo: '/'
