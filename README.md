@@ -5,7 +5,7 @@ My AngularJS sandbox app. It's built on top of Mandrill API, this app lets you s
 
 
 
-# Quick Start #
+# Quick Start 
 
 * Clone the repo
 * Install dependencies
@@ -17,17 +17,17 @@ npm install && bower install
 grunt serv
 ```
 
-# Grunt task #
+# Grunt task 
 
 - `grunt serv` runs local server including livereload and watcher
 
 - `grunt build` builds the optimized project
 
-- `grunt deploy` deploy the optimized project on GitHub gh-pages branch
+- `grunt deploy` deploys the optimized project on GitHub gh-pages branch
 
 
 
-## Made with love with : ## 
+## Made with love with :
 * AngularJS
 * Yeoman 
 * Bower 
