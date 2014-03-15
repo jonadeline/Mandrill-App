@@ -3,3 +3,6 @@
 /test
 .sass-cache/
 .tmp/
+/app/bower-components
+.grunt/
+dist/
