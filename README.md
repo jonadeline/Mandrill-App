@@ -1,7 +1,7 @@
 Greetings App
 ==============
 
-My AngularJS sandbox app. It's built on top of Mandrill API, this app lets you send a customized greeting card 
+My AngularJS sandbox app. This app lets you send a customized greetings card from a Mandrill template.
 
 
 
