@@ -19,17 +19,20 @@ grunt serv
 
 # Grunt task #
 
-* ```
+```
 grunt serv
-``` runs local server including livereload and watcher
+``` 
+runs local server including livereload and watcher
 
-* ```
+```
 grunt build
-``` builds the project
+``` 
+builds the project
 
-* ```
+```
 grunt deploy
-``` deploy the project on GitHub gh-pages branch
+``` 
+deploy the project on GitHub gh-pages branch
 
 
 
