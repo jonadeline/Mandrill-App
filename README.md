@@ -1,8 +1,9 @@
 Greetings App
 ==============
 
-My first AngularJS App.  
-Send cutomized greeting cards via Mandrill. (transactional email platform from MailChimp)
+My first AngularJS App on top of Mandrill API (transactional email platform from MailChimp)
+
+This apps allows you to send customized greetings card template set up in Mandrill. 
 
 
 Made with : 
@@ -12,4 +13,5 @@ Made with :
 * Grunt 
 * Bootstrap 3
 * SASS
+* PHP
 
