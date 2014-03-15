@@ -19,20 +19,11 @@ grunt serv
 
 # Grunt task #
 
-```
-grunt serv
-``` 
-runs local server including livereload and watcher
+- `grunt serv` runs local server including livereload and watcher
 
-```
-grunt build
-``` 
-builds the project
+- `grunt build` builds the optimized project
 
-```
-grunt deploy
-``` 
-deploy the project on GitHub gh-pages branch
+- `grunt deploy` deploy the optimized project on GitHub gh-pages branch
 
 
 
