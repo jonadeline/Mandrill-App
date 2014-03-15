@@ -27,7 +27,7 @@ grunt serv
 
 
 
-## Made with love with :
+## Made with love thanks to :
 * AngularJS
 * Yeoman 
 * Bower 
@@ -36,3 +36,4 @@ grunt serv
 * SASS
 * Mandrill
 * PHP
+* GIT
