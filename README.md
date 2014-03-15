@@ -1,17 +1,44 @@
 Greetings App
 ==============
 
-My first AngularJS App on top of Mandrill API (transactional email platform from MailChimp)
-
-This apps allows you to send customized greetings card templates set up in Mandrill. 
+My AngularJS sandbox app. It's built on top of Mandrill API, this app lets you send a customized greeting card 
 
 
-Made with : 
+
+# Quick Start #
+
+* Clone the repo
+* Install dependencies
+```
+npm install && bower install
+```
+* Run grunt server 
+ ```
+grunt serv
+```
+
+# Grunt task #
+
+* ```
+grunt serv
+``` runs local server including livereload and watcher
+
+* ```
+grunt build
+``` builds the project
+
+* ```
+grunt deploy
+``` deploy the project on GitHub gh-pages branch
+
+
+
+## Made with love with : ## 
 * AngularJS
 * Yeoman 
 * Bower 
 * Grunt 
 * Bootstrap 3
 * SASS
+* Mandrill
 * PHP
-
