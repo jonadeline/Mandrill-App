@@ -1,4 +1,4 @@
-Greetings App
+Greetings App   [![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
 ==============
 
 My AngularJS sandbox app. This app lets you send a customized greetings card from a Mandrill template.
