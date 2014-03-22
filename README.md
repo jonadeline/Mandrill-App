@@ -17,7 +17,7 @@ npm install && bower install
 grunt serv
 ```
 
-# Grunt task 
+# Grunt tasks
 
 - `grunt serv` runs local server including livereload and watcher
 
