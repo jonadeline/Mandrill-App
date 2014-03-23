@@ -1,0 +1,57 @@
+$iconSpritePath: "../images/glyphicons-halflings.png";
+$iconWhiteSpritePath: "../images/glyphicons-halflings-white.png";
+
+
+.container {
+  margin: 0 auto;
+  float: none;
+  background: #fff;
+  border: 10px solid #eee;
+  padding: 0 0px 30px 0;
+}
+
+header {
+  background: #eee;
+  padding: 15px 0 15px 0;
+}
+
+fieldset{
+   background: #eee;
+   padding:10px 20px;
+   margin:0 0 15px 0;
+}
+
+form {
+  padding: 20px 15px 0 15px;
+}
+
+textarea {
+  width: 96%;
+}
+
+.text-danger {
+  font-size: 0.8125em;
+  position: relative;
+  background: url('../images/ico-warning.png') 0 0 no-repeat;
+  padding: 2px 0 0 18px;
+}
+
+.btn-import {
+  margin: 0 0 10px 0;
+}
+
+.logo {
+  padding: 0 10px;
+}
+
+.recipient{
+  width:50%;
+}
+
+.modal-dialog{
+  width:700px;
+  iframe{
+    width:650px;  
+  }
+}
+
