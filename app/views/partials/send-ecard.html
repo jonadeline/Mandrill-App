@@ -1,0 +1,145 @@
+<!--<div class="hero-unit">
+  <h1>'Allo, 'Allo!</h1>
+  <p>You now have</p>
+  <ul>
+      <li ng-repeat="thing in awesomeThings">{{thing}}</li>
+  </ul>
+  <p>installed.</p>
+  <h3>Enjoy coding! - Yeoman</h3>
+</div>-->
+
+<section id="body" class="row-fluid">
+    <div class="container col-12 col-lg-6 text-center">
+        <header>
+            <!-- <img class="logo img-responsive" src="images/logo-iseabloom.png" alt="Is&a Bloom"> -->
+            <h3>Carte de voeux 2014</h3>
+        </header>
+
+        <form class="text-left" id="greetings-form" name="greetings" novalidate ng-submit="submitForm()">
+            <fieldset>
+                <h4>Vos informations</h4>
+                <div class="control-group form-group">
+                    <div class="controls">
+                        <input class="form-control" type="text" placeholder="Votre prénom" name="firstName" ng-model="user.firstName" ng-pattern="pattern1" required>
+                        <span class="text-danger" ng-show='greetings.firstName.$error.pattern'>Invalide : caractères alphabétiques uniquement</span>
+                        <span class="text-danger" ng-show='greetings.firstName.$dirty && greetings.firstName.$error.required'>Champs obligatoire</span>
+                    </div>
+                </div>
+                <div class="control-group form-group">
+                    <div class="controls">
+                        <input class="form-control" type="text" placeholder="Votre nom" name="lastName" ng-model="user.lastName" ng-pattern="pattern1" required>
+                        <span class="text-danger" ng-show='greetings.lastName.$error.pattern'>Invalide : caractères alphabétiques uniquement</span>
+                        <span class="text-danger" ng-show='greetings.lastName.$dirty && greetings.lastName.$error.required'>Champs obligatoire</span>
+                    </div>
+                </div>
+                <div class="control-group form-group">
+                    <div class="controls">
+                        <input class="form-control" type="email" placeholder="Votre adresse email" name="email" ng-model="user.email" required>
+                        <span class="text-danger" ng-show='greetings.email.$dirty && greetings.email.$invalid && !greetings.email.$error.required'>Invalide : verifiez le format de votre adresse email</span>
+                        <span class="text-danger" ng-show='greetings.email.$dirty && greetings.email.$error.required'>Champs obligatoire</span>
+                    </div>
+                </div>
+                <div class="control-group form-group">
+                    <div class="controls">
+                        <textarea class="form-control" rows="3" placeholder="Votre signature" name="userSignature" ng-model="user.signature" required></textarea>
+                        <span class="text-danger" ng-show='greetings.userSignature.$dirty && greetings.userSignature.$error.required'>Champs obligatoire</span>
+                    </div>
+                </div>
+            </fieldset>
+
+
+            <fieldset>
+                <h4>Destinataires</h4>
+                <div class="control-group form-group" ng-repeat="recipient in recipients">
+                    <div class="controls form-inline">
+                        <input class="recipient form-control" type="text" ng-model="recipient.email">
+                        <button type="button" class="btn btn-danger" ng-click="removeRecipient($index)">X</button>
+                    </div>
+                </div>
+                <div class="control-group form-group">
+                    <div class="controls form-inline">
+                        <input class="recipient form-control" type="email" placeholder="Adresse email d'un destinataire" name="recipient" ng-model="recipient.email">
+                        <button type="button" class="btn btn-primary" ng-click="addRecipient($index)" ng-disabled="greetings.recipient.$invalid">Ajouter</button>
+                    </div>
+                    <div class="checkbox" ng-show="greetings.email.$valid">
+                        <label>
+                            <input type="checkbox" ng-model="copyEmail" ng-change="receiveCopy()" ng-disabled="greetings.email.$invalid">Recevoir une copie
+                        </label>
+                    </div>
+                    <!--
+            <div class="btn-import">
+              <p>Importer vos contacts depuis :</p>
+              <a href="javascript:void(0)" class="btn btn-primary">Gmail</a>
+              <a href="javascript:void(0)" class="btn btn-primary">Hotmail</a>
+              <a href="javascript:void(0)" class="btn btn-primary">Yahoo!</a>
+            </div>
+          -->
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <h4>Edition de l'email de notification</h4>
+                <div class="control-group form-group">
+                    <div class="controls">
+                        <input class="form-control" type="text" placeholder="Objet de l'email de notification" name="mailSubject" ng-model="mailSubject" ng-pattern="pattern2" required>
+                        <span class="text-danger" ng-show='greetings.mailSubject.$error.pattern'>Invalide: caractères alphanumériques uniquement</span>
+                        <span class="text-danger" ng-show='greetings.mailSubject.$dirty && greetings.mailSubject.$error.required'>Champs obligatoire</span>
+                    </div>
+                </div>
+
+                <div class="control-group form-group">
+                    <textarea class="form-control" type="text" rows="5" placeholder="Message personnalisé de l'email de notification" name="mailContent" ng-model="mailContent" required></textarea>
+                    <span class="text-danger" ng-show='greetings.mailContent.$dirty && greetings.mailContent.$error.required'>Champs obligatoire</span>
+                </div>
+
+                <a class="btn btn-primary" ng-disabled="greetings.mailContent.$invalid || greetings.mailSubject.$invalid" ng-click="previewEmail()">Aperçu</a>
+
+            </fieldset>
+
+            <fieldset>
+                <h4>Edition de la carte animée</h4>
+                <div class="control-group form-group">
+                    <textarea class="form-control" type="text" rows="5" placeholder="Message personnalisé de la carte de voeux animée" name="ecardContent" ng-model="ecardContent" required></textarea>
+                    <span class="text-danger" ng-show='greetings.ecardContent.$dirty && greetings.ecardContent.$error.required'>Champs obligatoire</span>
+                </div>
+
+            </fieldset>
+
+
+            <p class="required">* champs obligatoires</p>
+            <input type="hidden" value="">
+            <input type="hidden" value="">
+            <input type="hidden" ng-model="sendingID" ng-init="generateID(10)">
+
+            <!--<button id="send-form" type="submit" class="btn btn-success btn-lg">Test Envoyer</button>-->
+
+            <button id="send-form" type="submit" class="btn btn-success btn-lg pull-right" ng-disabled="greetings.$invalid">Envoyer</button>
+            <!--<a id="view-ecard" href="#" class="btn btn-primary btn-lg">Aperçu</a> </div>-->
+
+
+        </form>
+    </div>
+</section>
+
+
+<!-- Modal -->
+<div class="modal fade" id="previewEmail" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Modal title</h4>
+            </div>
+            <div class="modal-body">
+                <iframe id="emailPrev" src="{{emailhtml}}"></iframe>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->

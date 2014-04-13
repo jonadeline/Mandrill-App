@@ -4,7 +4,7 @@ angular.module('greetingsApp', ['ngRoute', 'LocalStorageModule'])
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'views/send-ecard.html',
+        templateUrl: 'partials/send-ecard.html',
         controller: 'sendCtrl'
       })
       .otherwise({
