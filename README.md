@@ -29,6 +29,7 @@ grunt serve
 - `git commit -m "deploying..."`
 - `git push heroku master`
 
+[Heroku Deploying Docs](https://devcenter.heroku.com/articles/git)
 
 ## Made with :
 * AngularJS
