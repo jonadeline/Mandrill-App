@@ -22,7 +22,7 @@ grunt serve
 - `grunt serve:dist` runs Express Server in production mode
 - `grunt build` builds the optimized project
 
-# Deploy on Heroku
+# Deploying on Heroku
 
 - `cd dist` 
 - `git add . -A`
