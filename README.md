@@ -1,8 +1,7 @@
-Greetings App   [![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
+Mandrill App   [![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
 ==============
 
-My AngularJS sandbox app. This app lets you send a customized greetings card from a Mandrill template.
-
+This my AngularJS sandbox app allowing to send a customized Mandrill email template.
 
 
 # Quick Start 
@@ -14,7 +13,7 @@ npm install && bower install
 ```
 * Run grunt server 
  ```
-grunt serv
+grunt serve
 ```
 
 # Grunt tasks
@@ -27,7 +26,7 @@ grunt serv
 
 
 
-## Made with love thanks to :
+## Made with :
 * AngularJS
 * Yeoman 
 * Bower 
@@ -36,4 +35,4 @@ grunt serv
 * SASS
 * Mandrill
 * PHP
-* GIT
+
