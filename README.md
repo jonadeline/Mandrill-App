@@ -29,11 +29,11 @@ grunt serve
 - `git commit -m "deploying..."`
 - `git push heroku master`
 
-[Heroku Deploying Docs](https://devcenter.heroku.com/articles/git)
+For more information, see : [Heroku Deploying Docs](https://devcenter.heroku.com/articles/git)
 
 ## Made with :
 * AngularJS
-* Yeoman Angular-fullstack Generator
+* Yeoman [generator-angular-fullstack](https://www.npmjs.org/package/generator-angular-fullstack)
 * Bower 
 * Grunt 
 * Bootstrap 3
