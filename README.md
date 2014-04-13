@@ -19,14 +19,15 @@ grunt serve
 # Grunt tasks
 
 - `grunt serve` runs Express Server in development mode
-
 - `grunt serve:dist` runs Express Server in production mode
-
 - `grunt build` builds the optimized project
 
 # Deploy on Heroku
 
-- `cd dist` `git push heroku master`
+- `cd dist` 
+- `git add . -A`
+- `git commit -m "deploying..."`
+- `git push heroku master`
 
 
 ## Made with :
