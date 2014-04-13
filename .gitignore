@@ -3,6 +3,7 @@
 /public
 .tmp
 .sass-cache
+.grunt/
 /app/bower_components
 heroku
 /views
