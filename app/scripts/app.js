@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('greetingsApp', ['ngRoute', 'LocalStorageModule'])
+angular.module('mandrillApp', ['ngRoute', 'LocalStorageModule'])
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {

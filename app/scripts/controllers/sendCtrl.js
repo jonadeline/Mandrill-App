@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('greetingsApp')
+angular.module('mandrillApp')
     .controller('sendCtrl', function($scope, localStorageService, myServices) {
 
 
