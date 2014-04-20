@@ -12,12 +12,12 @@
     <div class="container col-12 col-lg-6 text-center">
         <header>
             <!-- <img class="logo img-responsive" src="images/logo-iseabloom.png" alt="Is&a Bloom"> -->
-            <h3>Carte de voeux 2015</h3>
+            <h1>Mandrill + AngularJS = ♥ </h1>
         </header>
 
         <form class="text-left" id="greetings-form" name="greetings" novalidate ng-submit="submitForm()">
             <fieldset>
-                <h4>Vos informations</h4>
+                <h4>Set your informations</h4>
                 <div class="control-group form-group">
                     <div class="controls">
                         <input class="form-control" type="text" placeholder="Votre prénom" name="firstName" ng-model="user.firstName" ng-pattern="pattern1" required>
@@ -49,7 +49,7 @@
 
 
             <fieldset>
-                <h4>Destinataires</h4>
+                <h4>Define your recipients</h4>
                 <div class="control-group form-group" ng-repeat="recipient in recipients">
                     <div class="controls form-inline">
                         <input class="recipient form-control" type="text" ng-model="recipient.email">
@@ -78,7 +78,12 @@
             </fieldset>
 
             <fieldset>
-                <h4>Edition de l'email de notification</h4>
+                <h4>Edit your email</h4>
+                <div class="control-group form-group">
+                    <div class="controls">
+                      <select class="form-control" ng-init="getEmailTemplates()" ng-model="emailTemplate" ng-options="template for template in emailTemplates" required></select>
+                    </div>
+                </div>
                 <div class="control-group form-group">
                     <div class="controls">
                         <input class="form-control" type="text" placeholder="Objet de l'email de notification" name="mailSubject" ng-model="mailSubject" ng-pattern="pattern2" required>
@@ -92,10 +97,11 @@
                     <span class="text-danger" ng-show='greetings.mailContent.$dirty && greetings.mailContent.$error.required'>Champs obligatoire</span>
                 </div>
 
-                <a class="btn btn-primary" ng-disabled="greetings.mailContent.$invalid || greetings.mailSubject.$invalid" ng-click="previewEmail()">Aperçu</a>
+                <button class="btn btn-primary" data-toggle="modal" data-target="#previewEmail" ng-disabled="greetings.mailContent.$invalid || greetings.mailSubject.$invalid" ng-click="previewEmail()">Aperçu</a>
 
             </fieldset>
 
+            <!--
             <fieldset>
                 <h4>Edition de la carte animée</h4>
                 <div class="control-group form-group">
@@ -104,13 +110,9 @@
                 </div>
 
             </fieldset>
-
+            -->
 
             <p class="required">* champs obligatoires</p>
-            <input type="hidden" value="">
-            <input type="hidden" value="">
-            <input type="hidden" ng-model="sendingID" ng-init="generateID(10)">
-
             <!--<button id="send-form" type="submit" class="btn btn-success btn-lg">Test Envoyer</button>-->
 
             <button id="send-form" type="submit" class="btn btn-success btn-lg pull-right" ng-disabled="greetings.$invalid">Envoyer</button>
@@ -128,10 +130,10 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title">Modal title</h4>
+                <h4 class="modal-title">Email Preview</h4>
             </div>
             <div class="modal-body">
-                <iframe id="emailPrev" src="{{emailhtml}}"></iframe>
+
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
