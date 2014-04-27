@@ -21,28 +21,28 @@
                 <div class="control-group form-group">
                     <div class="controls">
                         <input class="form-control" type="text" placeholder="First Name" name="firstName" ng-model="user.firstName" ng-pattern="pattern1" required>
-                        <span class="text-danger" ng-show='greetings.firstName.$error.pattern'>Invalide : caractères alphabétiques uniquement</span>
-                        <span class="text-danger" ng-show='greetings.firstName.$dirty && greetings.firstName.$error.required'>Champs obligatoire</span>
+                        <span class="text-danger" ng-show='greetings.firstName.$error.pattern'>Error : letters and digits only</span>
+                        <span class="text-danger" ng-show='greetings.firstName.$dirty && greetings.firstName.$error.required'>Mandatory field</span>
                     </div>
                 </div>
                 <div class="control-group form-group">
                     <div class="controls">
                         <input class="form-control" type="text" placeholder="Last Name" name="lastName" ng-model="user.lastName" ng-pattern="pattern1" required>
-                        <span class="text-danger" ng-show='greetings.lastName.$error.pattern'>Invalide : caractères alphabétiques uniquement</span>
-                        <span class="text-danger" ng-show='greetings.lastName.$dirty && greetings.lastName.$error.required'>Champs obligatoire</span>
+                        <span class="text-danger" ng-show='greetings.lastName.$error.pattern'>Error : letters and digits only</span>
+                        <span class="text-danger" ng-show='greetings.lastName.$dirty && greetings.lastName.$error.required'>Mandatory field</span>
                     </div>
                 </div>
                 <div class="control-group form-group">
                     <div class="controls">
                         <input class="form-control" type="email" placeholder="Email" name="email" ng-model="user.email" required>
                         <span class="text-danger" ng-show='greetings.email.$dirty && greetings.email.$invalid && !greetings.email.$error.required'>Error : your email is not correct</span>
-                        <span class="text-danger" ng-show='greetings.email.$dirty && greetings.email.$error.required'>Champs obligatoire</span>
+                        <span class="text-danger" ng-show='greetings.email.$dirty && greetings.email.$error.required'>Mandatory field</span>
                     </div>
                 </div>
                 <div class="control-group form-group">
                     <div class="controls">
                         <textarea class="form-control" rows="3" placeholder="Votre signature" name="userSignature" ng-model="user.signature" required></textarea>
-                        <span class="text-danger" ng-show='greetings.userSignature.$dirty && greetings.userSignature.$error.required'>Champs obligatoire</span>
+                        <span class="text-danger" ng-show='greetings.userSignature.$dirty && greetings.userSignature.$error.required'>Mandatory field</span>
                     </div>
                 </div>
             </fieldset>
@@ -58,7 +58,7 @@
                 </div>
                 <div class="control-group form-group">
                     <div class="controls form-inline">
-                        <input class="recipient form-control" type="email" placeholder="Adresse email d'un destinataire" name="recipient" ng-model="recipient.email">
+                        <input class="recipient form-control" type="email" placeholder="Recipient's Email Adress" name="recipient" ng-model="recipient.email">
                         <button type="button" class="btn btn-primary" ng-click="addRecipient($index)" ng-disabled="greetings.recipient.$invalid">Add recipient</button>
                     </div>
                     <div class="checkbox" ng-show="greetings.email.$valid">

@@ -40,5 +40,4 @@ For more information, see : [Heroku Deploying Docs](https://devcenter.heroku.com
 * SASS
 * Mandrill
 * Heroku
-* PHP
 
