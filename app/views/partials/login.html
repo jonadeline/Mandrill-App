@@ -2,17 +2,19 @@
     <fieldset>
         <h4 class="pull-left">Authentication</h4>
 
+        <div ng-if="authError.status" class="animated fadeInUp error">{{authError.msg}}</div>
+
         <div class="control-group form-group">
             <div class="controls">
-                <input class="form-control" type="email" placeholder="Email" name="email" ng-model="login.email" required>
-                <span class="text-danger" ng-show='login.email.$dirty && login.email.$invalid && !login.email.$error.required'>Error : your email is not correct</span>
-                <span class="text-danger" ng-show='login.email.$dirty && login.email.$error.required'>Please enter your email adress</span>
+                <input class="form-control" type="email" placeholder="Email" name="mail" ng-model="login.email" required>
+                <span class="text-danger" ng-show="login.mail.$dirty && login.mail.$invalid && !login.mail.$error.required">Error : your email is not correct</span>
+                <span class="text-danger" ng-show='login.mail.$dirty && login.mail.$error.required'>Please enter your email adress</span>
             </div>
         </div>
         <div class="control-group form-group">
             <div class="controls">
                 <input class="form-control" type="password" placeholder="Password" name="pwd" ng-model="login.password" required>
-                <span class="text-danger" ng-show='login.pwd.$dirty && login.pwd.$error.required'>Please enter your password</span>
+                <span class="text-danger" ng-show="login.pwd.$dirty && login.pwd.$error.required">Please enter your password</span>
             </div>
         </div>
         <button type="submit" class="btn btn-success pull-right" ng-disabled="login.$invalid">Sign In</button>

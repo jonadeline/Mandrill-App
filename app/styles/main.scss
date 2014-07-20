@@ -90,6 +90,14 @@ header {
             height: 35px;
         }
     }
+    .error{
+      clear:both;
+      background:#428bca;
+      color:#fff;
+      margin:15px 0;
+      padding:6px 12px;
+      @include border-radius(4px);
+    }
 }
 /*
 .weather {

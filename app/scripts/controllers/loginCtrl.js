@@ -2,10 +2,10 @@
 'use strict';
 
 
-app.controller('loginCtrl', function($scope, $state, $rootScope, $firebase, loginService, usSpinnerService) {
+app.controller('loginCtrl', function($scope, $state, loginService, usSpinnerService) {
 
-    $rootScope.signIn = function(email, password) {
-        $scope.err = null;
+    $scope.signIn = function(email, password) {
+      $scope.authError = {};
         if (!$scope.login.email) {
             $scope.err = 'Please enter an email address';
         } else if (!$scope.login.password) {
@@ -14,11 +14,18 @@ app.controller('loginCtrl', function($scope, $state, $rootScope, $firebase, logi
             usSpinnerService.spin('spinner');
             loginService.init();
             loginService.login(email, password, function(err, user) {
-                if (!err) {
+               if (!err) {
                     $state.go('clients');
                 } else {
                     usSpinnerService.stop('spinner');
-                    console.log(err);
+                    $scope.authError.status = true;
+                    if (err.code === 'INVALID_USER'){
+                      $scope.authError.msg = 'We can\'t find your email in our database. Please retry.';
+                    }
+                    else if (err.code === 'INVALID_PASSWORD'){
+                      $scope.authError.msg = 'Your password is incorrect. Please retry or reset it.';
+                    }
+
                 }
             });
         }
