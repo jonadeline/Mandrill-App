@@ -1,57 +1,127 @@
-$iconSpritePath: "../images/glyphicons-halflings.png";
-$iconWhiteSpritePath: "../images/glyphicons-halflings-white.png";
+/* $iconSpritePath:"../images/glyphicons-halflings.png"; */
 
+/* $iconWhiteSpritePath:"../images/glyphicons-halflings-white.png"; */
 
+@import "base";
+
+/* Fonts Import */
+
+@each $font-face in artill_clean_icons {
+    @font-face {
+        font-family: $font-face;
+        font-style: normal;
+        font-weight: normal;
+        src: url('fonts/#{$font-face}.eot');
+        src: url('fonts/#{$font-face}.eot?') format('eot'), url('fonts/#{$font-face}.woff') format('woff'), url('fonts/#{$font-face}.ttf') format('truetype');
+    }
+}
 .container {
-  margin: 0 auto;
-  float: none;
-  background: #fff;
-  border: 10px solid #eee;
-  padding: 0 0px 30px 0;
+    margin: 0 auto;
+    float: none;
+    background: #fff;
+    border: 10px solid #eee;
+    padding: 0 0px 30px 0;
 }
-
 header {
-  background: #eee;
-  padding: 15px 0 15px 0;
+    background: #eee;
+    padding: 0px 0 15px 0;
+    h1 {
+        margin-top: 10px;
+    }
 }
-
-fieldset{
-   background: #eee;
-   padding:10px 20px;
-   margin:0 0 15px 0;
+fieldset {
+    background: #eee;
+    padding: 10px 20px;
+    margin: 0 0 15px 0;
 }
-
-form {
-  padding: 20px 15px 0 15px;
+#wrapper {
+    padding: 20px 15px 0 15px;
+    section {
+        background: #eee;
+    }
 }
-
 textarea {
-  width: 96%;
+    width: 96%;
 }
-
 .text-danger {
-  font-size: 0.8125em;
-  position: relative;
-  background: url('../images/ico-warning.png') 0 0 no-repeat;
-  padding: 2px 0 0 18px;
+    font-size: 0.8125em;
+    position: relative;
+    background: url('../images/ico-warning.png') 0 0 no-repeat;
+    padding: 2px 0 0 18px;
 }
-
 .btn-import {
-  margin: 0 0 10px 0;
+    margin: 0 0 10px 0;
 }
-
 .logo {
-  padding: 0 10px;
+    padding: 0 10px;
+}
+.recipient {
+    width: 50%;
 }
 
-.recipient{
-  width:50%;
+#logoutConfirm {
+    overflow: visible;
 }
-
-.modal-dialog{
-  width:700px;
-  iframe{
-    width:650px;  
+.modal-dialog {
+    width: 700px;
+    iframe {
+        width: 650px;
+    }
+}
+header {
+  h1{
+    text-align: center;
   }
+    > div {
+        height: 50px;
+    }
+    nav {
+        a {
+            cursor: pointer;
+        }
+    }
 }
-
+#login {
+    .spinner {
+        position: relative;
+        span {
+            display: block;
+            width: 50px;
+            height: 35px;
+        }
+    }
+}
+/*
+.weather {
+    position: relative;
+    top: -25px;
+    .temp {
+        @include font-size(1.5);
+        span {}
+    }
+    .icon {
+        font-family: 'artill_clean_icons';
+        @include font-size(6);
+        &.clear-day {
+            &: before {
+                content: "1";
+            }
+        }
+        &.cloudy {
+            &: before {
+                content: "3";
+            }
+        }
+        &.partly-cloudy-day {
+            &: before {
+                content: "A";
+            }
+        }
+        &.partly-cloudy-night {
+            &: before {
+                content: "a";
+            }
+        }
+    }
+}
+*/

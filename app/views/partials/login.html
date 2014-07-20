@@ -1,0 +1,24 @@
+<form id="login" name="login" novalidate ng-submit="signIn(login.email, login.password)">
+    <fieldset>
+        <h4 class="pull-left">Authentication</h4>
+
+        <div class="control-group form-group">
+            <div class="controls">
+                <input class="form-control" type="email" placeholder="Email" name="email" ng-model="login.email" required>
+                <span class="text-danger" ng-show='login.email.$dirty && login.email.$invalid && !login.email.$error.required'>Error : your email is not correct</span>
+                <span class="text-danger" ng-show='login.email.$dirty && login.email.$error.required'>Please enter your email adress</span>
+            </div>
+        </div>
+        <div class="control-group form-group">
+            <div class="controls">
+                <input class="form-control" type="password" placeholder="Password" name="pwd" ng-model="login.password" required>
+                <span class="text-danger" ng-show='login.pwd.$dirty && login.pwd.$error.required'>Please enter your password</span>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-success pull-right" ng-disabled="login.$invalid">Sign In</button>
+        <div class="spinner pull-right">
+            <span us-spinner="{radius:10, width:3, length: 2, lines:15, speed:2.2, trail:65, corners:0.8, rotate:0}" spinner-key="spinner"></span>
+        </div>
+
+    </fieldset>
+</form>

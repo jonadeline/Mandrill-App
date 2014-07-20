@@ -1,0 +1,8 @@
+<section>
+    <input class="form-control" ng-model="clientSearch">
+    <ul class="list-unstyled">
+        <li class="text-left" ng-repeat="client in clients | orderByPriority | filter:clientSearch">{{client.name}}</li>
+    </ul>
+
+    <span us-spinner spinner-key="spinner" spinner-start-active="1"></span>
+</section>

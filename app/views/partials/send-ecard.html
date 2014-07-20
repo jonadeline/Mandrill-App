@@ -8,65 +8,58 @@
   <h3>Enjoy coding! - Yeoman</h3>
 </div>-->
 
-<section id="body" class="row-fluid">
-    <div class="container col-12 col-lg-6 text-center">
-        <header>
-            <!-- <img class="logo img-responsive" src="images/logo-iseabloom.png" alt="Is&a Bloom"> -->
-            <h1>Mandrill + AngularJS = ♥</h1>
-        </header>
-
-        <form class="text-left" id="greetings-form" name="greetings" novalidate ng-submit="submitForm()">
-            <fieldset>
-                <h4>Set your informations</h4>
-                <div class="control-group form-group">
-                    <div class="controls">
-                        <input class="form-control" type="text" placeholder="First Name" name="firstName" ng-model="user.firstName" ng-pattern="pattern1" required>
-                        <span class="text-danger" ng-show='greetings.firstName.$error.pattern'>Error : letters and digits only</span>
-                        <span class="text-danger" ng-show='greetings.firstName.$dirty && greetings.firstName.$error.required'>Mandatory field</span>
-                    </div>
-                </div>
-                <div class="control-group form-group">
-                    <div class="controls">
-                        <input class="form-control" type="text" placeholder="Last Name" name="lastName" ng-model="user.lastName" ng-pattern="pattern1" required>
-                        <span class="text-danger" ng-show='greetings.lastName.$error.pattern'>Error : letters and digits only</span>
-                        <span class="text-danger" ng-show='greetings.lastName.$dirty && greetings.lastName.$error.required'>Mandatory field</span>
-                    </div>
-                </div>
-                <div class="control-group form-group">
-                    <div class="controls">
-                        <input class="form-control" type="email" placeholder="Email" name="email" ng-model="user.email" required>
-                        <span class="text-danger" ng-show='greetings.email.$dirty && greetings.email.$invalid && !greetings.email.$error.required'>Error : your email is not correct</span>
-                        <span class="text-danger" ng-show='greetings.email.$dirty && greetings.email.$error.required'>Mandatory field</span>
-                    </div>
-                </div>
-                <div class="control-group form-group">
-                    <div class="controls">
-                        <textarea class="form-control" rows="3" placeholder="Votre signature" name="userSignature" ng-model="user.signature" required></textarea>
-                        <span class="text-danger" ng-show='greetings.userSignature.$dirty && greetings.userSignature.$error.required'>Mandatory field</span>
-                    </div>
-                </div>
-            </fieldset>
+<form class="text-left" id="greetings-form" name="greetings" novalidate ng-submit="submitForm()">
+    <fieldset>
+        <h4>Set your informations</h4>
+        <div class="control-group form-group">
+            <div class="controls">
+                <input class="form-control" type="text" placeholder="First Name" name="firstName" ng-model="user.firstName" ng-pattern="pattern1" required>
+                <span class="text-danger" ng-show='greetings.firstName.$error.pattern'>Error : letters and digits only</span>
+                <span class="text-danger" ng-show='greetings.firstName.$dirty && greetings.firstName.$error.required'>Mandatory field</span>
+            </div>
+        </div>
+        <div class="control-group form-group">
+            <div class="controls">
+                <input class="form-control" type="text" placeholder="Last Name" name="lastName" ng-model="user.lastName" ng-pattern="pattern1" required>
+                <span class="text-danger" ng-show='greetings.lastName.$error.pattern'>Error : letters and digits only</span>
+                <span class="text-danger" ng-show='greetings.lastName.$dirty && greetings.lastName.$error.required'>Mandatory field</span>
+            </div>
+        </div>
+        <div class="control-group form-group">
+            <div class="controls">
+                <input class="form-control" type="email" placeholder="Email" name="email" ng-model="user.email" required>
+                <span class="text-danger" ng-show='greetings.email.$dirty && greetings.email.$invalid && !greetings.email.$error.required'>Error : your email is not correct</span>
+                <span class="text-danger" ng-show='greetings.email.$dirty && greetings.email.$error.required'>Mandatory field</span>
+            </div>
+        </div>
+        <div class="control-group form-group">
+            <div class="controls">
+                <textarea class="form-control" rows="3" placeholder="Votre signature" name="userSignature" ng-model="user.signature" required></textarea>
+                <span class="text-danger" ng-show='greetings.userSignature.$dirty && greetings.userSignature.$error.required'>Mandatory field</span>
+            </div>
+        </div>
+    </fieldset>
 
 
-            <fieldset>
-                <h4>Define your recipients</h4>
-                <div class="control-group form-group" ng-repeat="recipient in recipients">
-                    <div class="controls form-inline">
-                        <input class="recipient form-control" type="text" ng-model="recipient.email">
-                        <button type="button" class="btn btn-danger" ng-click="removeRecipient($index)">X</button>
-                    </div>
-                </div>
-                <div class="control-group form-group">
-                    <div class="controls form-inline">
-                        <input class="recipient form-control" type="email" placeholder="Recipient's Email Adress" name="recipient" ng-model="recipient.email">
-                        <button type="button" class="btn btn-primary" ng-click="addRecipient($index)" ng-disabled="greetings.recipient.$invalid">Add recipient</button>
-                    </div>
-                    <div class="checkbox" ng-show="greetings.email.$valid">
-                        <label>
-                            <input type="checkbox" ng-model="copyEmail" ng-change="receiveCopy()" ng-disabled="greetings.email.$invalid">Get a copy
-                        </label>
-                    </div>
-                    <!--
+    <fieldset>
+        <h4>Define your recipients</h4>
+        <div class="control-group form-group" ng-repeat="recipient in recipients">
+            <div class="controls form-inline">
+                <input class="recipient form-control" type="text" ng-model="recipient.email">
+                <button type="button" class="btn btn-danger" ng-click="removeRecipient($index)">X</button>
+            </div>
+        </div>
+        <div class="control-group form-group">
+            <div class="controls form-inline">
+                <input class="recipient form-control" type="email" placeholder="Recipient's Email Adress" name="recipient" ng-model="recipient.email">
+                <button type="button" class="btn btn-primary" ng-click="addRecipient($index)" ng-disabled="greetings.recipient.$invalid">Add recipient</button>
+            </div>
+            <div class="checkbox" ng-show="greetings.email.$valid">
+                <label>
+                    <input type="checkbox" ng-model="recipient.copyMe" ng-change="getCopy()" ng-disabled="greetings.email.$invalid">Get a copy
+                </label>
+            </div>
+            <!--
             <div class="btn-import">
               <p>Importer vos contacts depuis :</p>
               <a href="javascript:void(0)" class="btn btn-primary">Gmail</a>
@@ -74,34 +67,40 @@
               <a href="javascript:void(0)" class="btn btn-primary">Yahoo!</a>
             </div>
           -->
-                </div>
-            </fieldset>
+        </div>
+    </fieldset>
 
-            <fieldset>
-                <h4>Edit your email</h4>
-                <div class="control-group form-group">
-                    <div class="controls">
-                        <select class="form-control" ng-init="getEmailTemplates()" ng-model="emailTemplate" ng-options="template for template in emailTemplates" required></select>
-                    </div>
-                </div>
-                <div class="control-group form-group">
-                    <div class="controls">
-                        <input class="form-control" type="text" placeholder="Email Object" name="mailSubject" ng-model="mailSubject" ng-pattern="pattern2" required>
-                        <span class="text-danger" ng-show='greetings.mailSubject.$error.pattern'>Error : letters and digits only</span>
-                        <span class="text-danger" ng-show='greetings.mailSubject.$dirty && greetings.mailSubject.$error.required'>Mandatory field</span>
-                    </div>
-                </div>
+    <fieldset>
+        <h4>Edit your email</h4>
+        <div class="control-group form-group">
+            <div class="controls">
+                <select class="form-control" ng-init="getEmailTemplates()" ng-model="email.template" ng-options="template for template in emailTemplates" required></select>
+            </div>
+        </div>
+        <div class="control-group form-group">
+            <div class="controls">
+                <input class="form-control" type="text" placeholder="Email Object" name="mailObject" ng-model="email.object" ng-pattern="pattern2" required>
+                <span class="text-danger" ng-show='greetings.mailObject.$error.pattern'>Error : letters and digits only</span>
+                <span class="text-danger" ng-show='greetings.mailObject.$dirty && greetings.Object.$error.required'>Mandatory field</span>
+            </div>
+        </div>
 
-                <div class="control-group form-group">
-                    <textarea class="form-control" type="text" rows="5" placeholder="Mail Content" name="mailContent" ng-model="mailContent" required></textarea>
-                    <span class="text-danger" ng-show='greetings.mailContent.$dirty && greetings.mailContent.$error.required'>Mandatory field</span>
-                </div>
+        <div class="control-group form-group">
+            <textarea class="form-control" type="text" rows="5" placeholder="Mail Content" name="mailContent" ng-model="email.content" required></textarea>
+            <span class="text-danger" ng-show='greetings.mailContent.$dirty && greetings.mailContent.$error.required'>Mandatory field</span>
+        </div>
 
-                <button class="btn btn-primary" data-toggle="modal" data-target="#previewEmail" ng-disabled="greetings.mailContent.$invalid || greetings.mailSubject.$invalid" ng-click="previewEmail()">Preview</a>
+        <div class="control-group form-group">
+            <div class="controls">
+                <input class="form-control" type="text" placeholder="Email Tag (eg: myMktgCampaign)" name="mailTag" ng-model="email.tag">
+            </div>
+        </div>
 
-            </fieldset>
+        <button class="btn btn-primary" data-toggle="modal" data-target="#previewEmail" ng-disabled="greetings.mailContent.$invalid || greetings.mailSubject.$invalid" ng-click="previewEmail()">Preview</a>
 
-            <!--
+    </fieldset>
+
+    <!--
             <fieldset>
                 <h4>Edition de la carte animée</h4>
                 <div class="control-group form-group">
@@ -112,16 +111,15 @@
             </fieldset>
             -->
 
-            <p class="required">* mandatory fields</p>
-            <!--<button id="send-form" type="submit" class="btn btn-success btn-lg">Test Envoyer</button>-->
+    <p class="required">* mandatory fields</p>
+    <!--<button id="send-form" type="submit" class="btn btn-success btn-lg">Test Envoyer</button>-->
 
-            <button id="send-form" type="submit" class="btn btn-success btn-lg pull-right" ng-disabled="greetings.$invalid">Send</button>
-            <!--<a id="view-ecard" href="#" class="btn btn-primary btn-lg">Aperçu</a> </div>-->
+    <button id="send-form" type="submit" class="btn btn-success btn-lg pull-right" ng-disabled="greetings.$invalid">Send</button>
+    <!--<a id="view-ecard" href="#" class="btn btn-primary btn-lg">Aperçu</a> </div>-->
 
 
-        </form>
-    </div>
-</section>
+</form>
+
 
 
 <!-- Modal -->
