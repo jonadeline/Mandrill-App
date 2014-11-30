@@ -70,10 +70,10 @@ app.controller('sendCtrl', function($scope, localStorageService, mandrill) {
             'template_name': $scope.email.template,
             'template_content': [{
                 'name': 'title',
-                'content': $scope.mail.subject,
+                'content': $scope.email.object,
             }, {
                 'name': 'main',
-                'content': $scope.mail.content
+                'content': $scope.email.content
             }, {
                 'name': 'signature',
                 'content': $scope.user.signature

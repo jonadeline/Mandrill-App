@@ -3,7 +3,7 @@
 
 
 
-var app = angular.module('mandrillApp', ['ui.router', 'LocalStorageModule', 'firebase', 'angularSpinner']);
+var app = angular.module('mandrillApp', ['ui.router', 'LocalStorageModule', 'firebase', 'angular-loading-bar']);
 
 var isLoggedIn = function($firebaseSimpleLogin, $state, firebaseRef, $rootScope) {
     return $firebaseSimpleLogin(firebaseRef())

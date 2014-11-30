@@ -1,9 +1,7 @@
 <form id="login" name="login" novalidate ng-submit="signIn(login.email, login.password)">
     <fieldset>
         <h4 class="pull-left">Authentication</h4>
-
         <div ng-if="authError.status" class="animated fadeInUp error">{{authError.msg}}</div>
-
         <div class="control-group form-group">
             <div class="controls">
                 <input class="form-control" type="email" placeholder="Email" name="mail" ng-model="login.email" required>
