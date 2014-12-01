@@ -9,4 +9,4 @@ heroku
 /views
 /dist
 /test
-
+npm-debug.log
